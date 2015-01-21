@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B662E6DEB8C73AC7BDF5035 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5460A4F5599F0E011F3A8D50 /* libPods.a */; };
+		C7ACF6691A5E876E003008C0 /* SCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF6681A5E876E003008C0 /* SCApi.m */; };
+		C7D62DA91A5D936B006B769C /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D62DA81A5D936B006B769C /* SCLoginViewController.m */; };
+		C7D62DB41A5DCED9006B769C /* SCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D62DAF1A5DCED9006B769C /* SCUser.m */; };
+		C7D62DB51A5DCED9006B769C /* SCUsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D62DB11A5DCED9006B769C /* SCUsersTableViewController.m */; };
+		C7D62DB61A5DCED9006B769C /* SCUserViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D62DB31A5DCED9006B769C /* SCUserViewCell.m */; };
+		C7D62DBA1A5DCF6C006B769C /* SCUserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D62DB91A5DCF6C006B769C /* SCUserDetailViewController.m */; };
 		C7DC5BDF1A5BF9A1002723C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DC5BDE1A5BF9A1002723C4 /* main.m */; };
-		C7DC5BE21A5BF9A1002723C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DC5BE11A5BF9A1002723C4 /* AppDelegate.m */; };
+		C7DC5BE21A5BF9A1002723C4 /* SCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DC5BE11A5BF9A1002723C4 /* SCAppDelegate.m */; };
 		C7DC5BE51A5BF9A1002723C4 /* SportCourts.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C7DC5BE31A5BF9A1002723C4 /* SportCourts.xcdatamodeld */; };
-		C7DC5BE81A5BF9A1002723C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DC5BE71A5BF9A1002723C4 /* ViewController.m */; };
 		C7DC5BEB1A5BF9A1002723C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7DC5BE91A5BF9A1002723C4 /* Main.storyboard */; };
 		C7DC5BED1A5BF9A1002723C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7DC5BEC1A5BF9A1002723C4 /* Images.xcassets */; };
 		C7DC5BF01A5BF9A1002723C4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7DC5BEE1A5BF9A1002723C4 /* LaunchScreen.xib */; };
 		C7DC5BFC1A5BF9A2002723C4 /* SportCourtsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DC5BFB1A5BF9A2002723C4 /* SportCourtsTests.m */; };
+		C7E4D2B41A5D5F95006F852F /* SCMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4D2B31A5D5F95006F852F /* SCMenuViewController.m */; };
+		C7E4D2B71A5D6BAE006F852F /* SCMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4D2B61A5D6BAE006F852F /* SCMenuCell.m */; };
+		C7E4D2BA1A5D6E71006F852F /* SCProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7E4D2B91A5D6E71006F852F /* SCProfileViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,20 +37,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2BA183AAE3821D246D5E8273 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5460A4F5599F0E011F3A8D50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B575A9183910D8779EAFE5EF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C72478A11A5C1CA700AE4F3F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C7ACF6671A5E876E003008C0 /* SCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCApi.h; sourceTree = "<group>"; };
+		C7ACF6681A5E876E003008C0 /* SCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCApi.m; sourceTree = "<group>"; };
+		C7D62DA71A5D936B006B769C /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
+		C7D62DA81A5D936B006B769C /* SCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewController.m; sourceTree = "<group>"; };
+		C7D62DAE1A5DCED9006B769C /* SCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUser.h; sourceTree = "<group>"; };
+		C7D62DAF1A5DCED9006B769C /* SCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUser.m; sourceTree = "<group>"; };
+		C7D62DB01A5DCED9006B769C /* SCUsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUsersTableViewController.h; sourceTree = "<group>"; };
+		C7D62DB11A5DCED9006B769C /* SCUsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUsersTableViewController.m; sourceTree = "<group>"; };
+		C7D62DB21A5DCED9006B769C /* SCUserViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUserViewCell.h; sourceTree = "<group>"; };
+		C7D62DB31A5DCED9006B769C /* SCUserViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUserViewCell.m; sourceTree = "<group>"; };
+		C7D62DB81A5DCF6C006B769C /* SCUserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCUserDetailViewController.h; sourceTree = "<group>"; };
+		C7D62DB91A5DCF6C006B769C /* SCUserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCUserDetailViewController.m; sourceTree = "<group>"; };
 		C7DC5BD91A5BF9A1002723C4 /* SportCourts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportCourts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DC5BDD1A5BF9A1002723C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7DC5BDE1A5BF9A1002723C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C7DC5BE01A5BF9A1002723C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		C7DC5BE11A5BF9A1002723C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C7DC5BE01A5BF9A1002723C4 /* SCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCAppDelegate.h; sourceTree = "<group>"; };
+		C7DC5BE11A5BF9A1002723C4 /* SCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCAppDelegate.m; sourceTree = "<group>"; };
 		C7DC5BE41A5BF9A1002723C4 /* SportCourts.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SportCourts.xcdatamodel; sourceTree = "<group>"; };
-		C7DC5BE61A5BF9A1002723C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C7DC5BE71A5BF9A1002723C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C7DC5BEA1A5BF9A1002723C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7DC5BEC1A5BF9A1002723C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C7DC5BEF1A5BF9A1002723C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C7DC5BF51A5BF9A2002723C4 /* SportCourtsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SportCourtsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7DC5BFA1A5BF9A2002723C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7DC5BFB1A5BF9A2002723C4 /* SportCourtsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SportCourtsTests.m; sourceTree = "<group>"; };
+		C7E4D2B21A5D5F95006F852F /* SCMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMenuViewController.h; sourceTree = "<group>"; };
+		C7E4D2B31A5D5F95006F852F /* SCMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMenuViewController.m; sourceTree = "<group>"; };
+		C7E4D2B51A5D6BAE006F852F /* SCMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCMenuCell.h; sourceTree = "<group>"; };
+		C7E4D2B61A5D6BAE006F852F /* SCMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCMenuCell.m; sourceTree = "<group>"; };
+		C7E4D2B81A5D6E71006F852F /* SCProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCProfileViewController.h; sourceTree = "<group>"; };
+		C7E4D2B91A5D6E71006F852F /* SCProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B662E6DEB8C73AC7BDF5035 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +92,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C1571BDE4F5F114473398BB9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5460A4F5599F0E011F3A8D50 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7D62DAD1A5DCE84006B769C /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				C7E4D2B21A5D5F95006F852F /* SCMenuViewController.h */,
+				C7E4D2B31A5D5F95006F852F /* SCMenuViewController.m */,
+				C7E4D2B51A5D6BAE006F852F /* SCMenuCell.h */,
+				C7E4D2B61A5D6BAE006F852F /* SCMenuCell.m */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		C7D62DB71A5DCEE4006B769C /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				C7D62DAE1A5DCED9006B769C /* SCUser.h */,
+				C7D62DAF1A5DCED9006B769C /* SCUser.m */,
+				C7D62DB01A5DCED9006B769C /* SCUsersTableViewController.h */,
+				C7D62DB11A5DCED9006B769C /* SCUsersTableViewController.m */,
+				C7D62DB81A5DCF6C006B769C /* SCUserDetailViewController.h */,
+				C7D62DB91A5DCF6C006B769C /* SCUserDetailViewController.m */,
+				C7D62DB21A5DCED9006B769C /* SCUserViewCell.h */,
+				C7D62DB31A5DCED9006B769C /* SCUserViewCell.m */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
 		C7DC5BD01A5BF9A1002723C4 = {
 			isa = PBXGroup;
 			children = (
 				C7DC5BDB1A5BF9A1002723C4 /* SportCourts */,
 				C7DC5BF81A5BF9A2002723C4 /* SportCourtsTests */,
 				C7DC5BDA1A5BF9A1002723C4 /* Products */,
+				FDA41A076929F63B0C17A0D7 /* Pods */,
+				C1571BDE4F5F114473398BB9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,10 +149,16 @@
 		C7DC5BDB1A5BF9A1002723C4 /* SportCourts */ = {
 			isa = PBXGroup;
 			children = (
-				C7DC5BE01A5BF9A1002723C4 /* AppDelegate.h */,
-				C7DC5BE11A5BF9A1002723C4 /* AppDelegate.m */,
-				C7DC5BE61A5BF9A1002723C4 /* ViewController.h */,
-				C7DC5BE71A5BF9A1002723C4 /* ViewController.m */,
+				C7DC5BE01A5BF9A1002723C4 /* SCAppDelegate.h */,
+				C7DC5BE11A5BF9A1002723C4 /* SCAppDelegate.m */,
+				C7ACF6671A5E876E003008C0 /* SCApi.h */,
+				C7ACF6681A5E876E003008C0 /* SCApi.m */,
+				C7D62DAD1A5DCE84006B769C /* Menu */,
+				C7E4D2B81A5D6E71006F852F /* SCProfileViewController.h */,
+				C7E4D2B91A5D6E71006F852F /* SCProfileViewController.m */,
+				C7D62DB71A5DCEE4006B769C /* Users */,
+				C7D62DA71A5D936B006B769C /* SCLoginViewController.h */,
+				C7D62DA81A5D936B006B769C /* SCLoginViewController.m */,
 				C7DC5BE91A5BF9A1002723C4 /* Main.storyboard */,
 				C7DC5BEC1A5BF9A1002723C4 /* Images.xcassets */,
 				C7DC5BEE1A5BF9A1002723C4 /* LaunchScreen.xib */,
@@ -101,6 +173,7 @@
 			children = (
 				C7DC5BDD1A5BF9A1002723C4 /* Info.plist */,
 				C7DC5BDE1A5BF9A1002723C4 /* main.m */,
+				C72478A11A5C1CA700AE4F3F /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -122,6 +195,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		FDA41A076929F63B0C17A0D7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B575A9183910D8779EAFE5EF /* Pods.debug.xcconfig */,
+				2BA183AAE3821D246D5E8273 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +211,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C7DC5BFF1A5BF9A2002723C4 /* Build configuration list for PBXNativeTarget "SportCourts" */;
 			buildPhases = (
+				DBFE2323A421A51BC63A2086 /* Check Pods Manifest.lock */,
 				C7DC5BD51A5BF9A1002723C4 /* Sources */,
 				C7DC5BD61A5BF9A1002723C4 /* Frameworks */,
 				C7DC5BD71A5BF9A1002723C4 /* Resources */,
+				83EBF9E012A47857468A026B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -166,6 +250,7 @@
 		C7DC5BD11A5BF9A1002723C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SC;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Vitaliy Harchenko";
 				TargetAttributes = {
@@ -217,15 +302,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83EBF9E012A47857468A026B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBFE2323A421A51BC63A2086 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C7DC5BD51A5BF9A1002723C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7DC5BE21A5BF9A1002723C4 /* AppDelegate.m in Sources */,
+				C7D62DA91A5D936B006B769C /* SCLoginViewController.m in Sources */,
+				C7DC5BE21A5BF9A1002723C4 /* SCAppDelegate.m in Sources */,
+				C7D62DBA1A5DCF6C006B769C /* SCUserDetailViewController.m in Sources */,
 				C7DC5BDF1A5BF9A1002723C4 /* main.m in Sources */,
-				C7DC5BE81A5BF9A1002723C4 /* ViewController.m in Sources */,
+				C7E4D2BA1A5D6E71006F852F /* SCProfileViewController.m in Sources */,
+				C7E4D2B71A5D6BAE006F852F /* SCMenuCell.m in Sources */,
+				C7ACF6691A5E876E003008C0 /* SCApi.m in Sources */,
+				C7D62DB61A5DCED9006B769C /* SCUserViewCell.m in Sources */,
+				C7D62DB51A5DCED9006B769C /* SCUsersTableViewController.m in Sources */,
 				C7DC5BE51A5BF9A1002723C4 /* SportCourts.xcdatamodeld in Sources */,
+				C7D62DB41A5DCED9006B769C /* SCUser.m in Sources */,
+				C7E4D2B41A5D5F95006F852F /* SCMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,8 +473,10 @@
 		};
 		C7DC5C001A5BF9A2002723C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B575A9183910D8779EAFE5EF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = SportCourts/PrefixHeader.pch;
 				INFOPLIST_FILE = SportCourts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -357,8 +485,10 @@
 		};
 		C7DC5C011A5BF9A2002723C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BA183AAE3821D246D5E8273 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = SportCourts/PrefixHeader.pch;
 				INFOPLIST_FILE = SportCourts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -418,6 +548,7 @@
 				C7DC5C011A5BF9A2002723C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C7DC5C021A5BF9A2002723C4 /* Build configuration list for PBXNativeTarget "SportCourtsTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +557,7 @@
 				C7DC5C041A5BF9A2002723C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
