@@ -31,8 +31,8 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:@"http://sportcourts.ru/api/users/get" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        self.users = [SCUser usersArrayFromDictionary:[responseObject objectForKey:@"users"]];
+        NSMutableDictionary *response = [responseObject objectForKey:@"response"];
+        self.users = [SCUser usersArrayFromDictionary:[response objectForKey:@"users"]];
         [self.tableView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

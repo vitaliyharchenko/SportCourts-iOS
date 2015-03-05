@@ -105,8 +105,9 @@
             [self.activityIndicator setHidden:YES];
         } else {
             // записываем токен и айди пользователя
-            NSString *token = [responseObject objectForKey:@"token"];
-            NSString *user_id = [responseObject objectForKey:@"user_id"];
+            NSMutableDictionary *response = [responseObject objectForKey:@"response"];
+            NSString *token = [response objectForKey:@"token"];
+            NSString *user_id = [response objectForKey:@"user_id"];
             NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
             NSMutableDictionary *registerDefaults = [NSMutableDictionary dictionary];
             [registerDefaults setObject:token forKey:@"SCSettingUserToken"];
