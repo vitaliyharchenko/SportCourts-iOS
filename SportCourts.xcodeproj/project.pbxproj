@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		3B662E6DEB8C73AC7BDF5035 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5460A4F5599F0E011F3A8D50 /* libPods.a */; };
+		C76FACE61ABC15E500135C69 /* FDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FACE51ABC15E500135C69 /* FDKeychain.m */; };
+		C76FACE91ABC24F200135C69 /* SCProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FACE81ABC24F200135C69 /* SCProfileCell.m */; };
+		C76FACF31ABC962900135C69 /* SCGame.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FACEB1ABC962900135C69 /* SCGame.m */; };
+		C76FACF41ABC962900135C69 /* SCGameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FACED1ABC962900135C69 /* SCGameDetailViewController.m */; };
+		C76FACF51ABC962900135C69 /* SCGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FACEF1ABC962900135C69 /* SCGamesTableViewController.m */; };
+		C76FACF61ABC962900135C69 /* SCGameViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C76FACF11ABC962900135C69 /* SCGameViewCell.m */; };
 		C7ACF6691A5E876E003008C0 /* SCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = C7ACF6681A5E876E003008C0 /* SCApi.m */; };
 		C7D62DA91A5D936B006B769C /* SCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D62DA81A5D936B006B769C /* SCLoginViewController.m */; };
 		C7D62DB41A5DCED9006B769C /* SCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = C7D62DAF1A5DCED9006B769C /* SCUser.m */; };
@@ -41,6 +47,19 @@
 		5460A4F5599F0E011F3A8D50 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B575A9183910D8779EAFE5EF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		C72478A11A5C1CA700AE4F3F /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		C76FACE31ABC158500135C69 /* SportCourts.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SportCourts.entitlements; sourceTree = "<group>"; };
+		C76FACE41ABC15E500135C69 /* FDKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDKeychain.h; sourceTree = "<group>"; };
+		C76FACE51ABC15E500135C69 /* FDKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDKeychain.m; sourceTree = "<group>"; };
+		C76FACE71ABC24F200135C69 /* SCProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCProfileCell.h; sourceTree = "<group>"; };
+		C76FACE81ABC24F200135C69 /* SCProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCProfileCell.m; sourceTree = "<group>"; };
+		C76FACEA1ABC962900135C69 /* SCGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGame.h; path = SportCourts/SCGame.h; sourceTree = "<group>"; };
+		C76FACEB1ABC962900135C69 /* SCGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCGame.m; path = SportCourts/SCGame.m; sourceTree = "<group>"; };
+		C76FACEC1ABC962900135C69 /* SCGameDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGameDetailViewController.h; path = SportCourts/SCGameDetailViewController.h; sourceTree = "<group>"; };
+		C76FACED1ABC962900135C69 /* SCGameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCGameDetailViewController.m; path = SportCourts/SCGameDetailViewController.m; sourceTree = "<group>"; };
+		C76FACEE1ABC962900135C69 /* SCGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGamesTableViewController.h; path = SportCourts/SCGamesTableViewController.h; sourceTree = "<group>"; };
+		C76FACEF1ABC962900135C69 /* SCGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCGamesTableViewController.m; path = SportCourts/SCGamesTableViewController.m; sourceTree = "<group>"; };
+		C76FACF01ABC962900135C69 /* SCGameViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCGameViewCell.h; path = SportCourts/SCGameViewCell.h; sourceTree = "<group>"; };
+		C76FACF11ABC962900135C69 /* SCGameViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCGameViewCell.m; path = SportCourts/SCGameViewCell.m; sourceTree = "<group>"; };
 		C7ACF6671A5E876E003008C0 /* SCApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCApi.h; sourceTree = "<group>"; };
 		C7ACF6681A5E876E003008C0 /* SCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCApi.m; sourceTree = "<group>"; };
 		C7D62DA71A5D936B006B769C /* SCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCLoginViewController.h; sourceTree = "<group>"; };
@@ -100,6 +119,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C76FACF21ABC962900135C69 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				C76FACEA1ABC962900135C69 /* SCGame.h */,
+				C76FACEB1ABC962900135C69 /* SCGame.m */,
+				C76FACEC1ABC962900135C69 /* SCGameDetailViewController.h */,
+				C76FACED1ABC962900135C69 /* SCGameDetailViewController.m */,
+				C76FACEE1ABC962900135C69 /* SCGamesTableViewController.h */,
+				C76FACEF1ABC962900135C69 /* SCGamesTableViewController.m */,
+				C76FACF01ABC962900135C69 /* SCGameViewCell.h */,
+				C76FACF11ABC962900135C69 /* SCGameViewCell.m */,
+			);
+			name = Games;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		C7D62DAD1A5DCE84006B769C /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +142,8 @@
 				C7E4D2B31A5D5F95006F852F /* SCMenuViewController.m */,
 				C7E4D2B51A5D6BAE006F852F /* SCMenuCell.h */,
 				C7E4D2B61A5D6BAE006F852F /* SCMenuCell.m */,
+				C76FACE71ABC24F200135C69 /* SCProfileCell.h */,
+				C76FACE81ABC24F200135C69 /* SCProfileCell.m */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -149,6 +186,7 @@
 		C7DC5BDB1A5BF9A1002723C4 /* SportCourts */ = {
 			isa = PBXGroup;
 			children = (
+				C76FACE31ABC158500135C69 /* SportCourts.entitlements */,
 				C7DC5BE01A5BF9A1002723C4 /* SCAppDelegate.h */,
 				C7DC5BE11A5BF9A1002723C4 /* SCAppDelegate.m */,
 				C7ACF6671A5E876E003008C0 /* SCApi.h */,
@@ -156,6 +194,7 @@
 				C7D62DAD1A5DCE84006B769C /* Menu */,
 				C7E4D2B81A5D6E71006F852F /* SCProfileViewController.h */,
 				C7E4D2B91A5D6E71006F852F /* SCProfileViewController.m */,
+				C76FACF21ABC962900135C69 /* Games */,
 				C7D62DB71A5DCEE4006B769C /* Users */,
 				C7D62DA71A5D936B006B769C /* SCLoginViewController.h */,
 				C7D62DA81A5D936B006B769C /* SCLoginViewController.m */,
@@ -171,6 +210,8 @@
 		C7DC5BDC1A5BF9A1002723C4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C76FACE41ABC15E500135C69 /* FDKeychain.h */,
+				C76FACE51ABC15E500135C69 /* FDKeychain.m */,
 				C7DC5BDD1A5BF9A1002723C4 /* Info.plist */,
 				C7DC5BDE1A5BF9A1002723C4 /* main.m */,
 				C72478A11A5C1CA700AE4F3F /* PrefixHeader.pch */,
@@ -256,6 +297,12 @@
 				TargetAttributes = {
 					C7DC5BD81A5BF9A1002723C4 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = Y3W7N9BNH9;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					C7DC5BF41A5BF9A2002723C4 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -341,16 +388,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7D62DA91A5D936B006B769C /* SCLoginViewController.m in Sources */,
+				C76FACE91ABC24F200135C69 /* SCProfileCell.m in Sources */,
 				C7DC5BE21A5BF9A1002723C4 /* SCAppDelegate.m in Sources */,
 				C7D62DBA1A5DCF6C006B769C /* SCUserDetailViewController.m in Sources */,
 				C7DC5BDF1A5BF9A1002723C4 /* main.m in Sources */,
 				C7E4D2BA1A5D6E71006F852F /* SCProfileViewController.m in Sources */,
+				C76FACF61ABC962900135C69 /* SCGameViewCell.m in Sources */,
 				C7E4D2B71A5D6BAE006F852F /* SCMenuCell.m in Sources */,
 				C7ACF6691A5E876E003008C0 /* SCApi.m in Sources */,
 				C7D62DB61A5DCED9006B769C /* SCUserViewCell.m in Sources */,
+				C76FACF41ABC962900135C69 /* SCGameDetailViewController.m in Sources */,
 				C7D62DB51A5DCED9006B769C /* SCUsersTableViewController.m in Sources */,
 				C7DC5BE51A5BF9A1002723C4 /* SportCourts.xcdatamodeld in Sources */,
+				C76FACF51ABC962900135C69 /* SCGamesTableViewController.m in Sources */,
+				C76FACE61ABC15E500135C69 /* FDKeychain.m in Sources */,
 				C7D62DB41A5DCED9006B769C /* SCUser.m in Sources */,
+				C76FACF31ABC962900135C69 /* SCGame.m in Sources */,
 				C7E4D2B41A5D5F95006F852F /* SCMenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,10 +529,14 @@
 			baseConfigurationReference = B575A9183910D8779EAFE5EF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SportCourts/SportCourts.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = SportCourts/PrefixHeader.pch;
 				INFOPLIST_FILE = SportCourts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -488,10 +545,14 @@
 			baseConfigurationReference = 2BA183AAE3821D246D5E8273 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SportCourts/SportCourts.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = SportCourts/PrefixHeader.pch;
 				INFOPLIST_FILE = SportCourts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -15,16 +15,19 @@
     user.first_name = [userDict objectForKey:@"first_name"];
     user.last_name = [userDict objectForKey:@"last_name"];
     user.user_id = [userDict objectForKey:@"user_id"];
+    user.vkuserid = [userDict objectForKey:@"vkuserid"];
+    user.phone = [userDict objectForKey:@"phone"];
+    user.userlevel = [userDict objectForKey:@"userlevel"];
+    user.city_id = [userDict objectForKey:@"city_id"];
+    user.height = [userDict objectForKey:@"height"];
+    user.weight = [userDict objectForKey:@"weight"];
+    user.lasttime = [userDict objectForKey:@"lasttime"];
+    user.sex = [userDict objectForKey:@"sex"];
+    user.regdate = [userDict objectForKey:@"regdate"];
+    user.referer = [userDict objectForKey:@"referer"];
+    user.settings = [userDict objectForKey:@"settings"];
+    user.city = [userDict objectForKey:@"city"];
 
-    return user;
-}
-
-+ (NSString *)parseIdFromDictionary:(NSDictionary *)userDict {
-    SCUser *user = [[SCUser alloc] init];
-    user.first_name = [userDict objectForKey:@"first_name"];
-    user.last_name = [userDict objectForKey:@"last_name"];
-    user.user_id = [userDict objectForKey:@"user_id"];
-    
     return user;
 }
 

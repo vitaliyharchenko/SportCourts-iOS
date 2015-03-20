@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 Vitaliy Harchenko. All rights reserved.
 //
 
-#import "SCUser.h"
+#import "SCGame.h"
 
-@interface SCUserDetailViewController : UIViewController
+@interface SCGameDetailViewController : UIViewController
 
-@property (strong,nonatomic) SCUser *user;
+@property (strong,nonatomic) SCGame *user;
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatar;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;

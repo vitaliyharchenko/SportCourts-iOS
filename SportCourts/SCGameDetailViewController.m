@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Vitaliy Harchenko. All rights reserved.
 //
 
-#import "SCUserDetailViewController.h"
+#import "SCGameDetailViewController.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface SCUserDetailViewController ()
+@interface SCGameDetailViewController ()
 
 @end
 
-@implementation SCUserDetailViewController
+@implementation SCGameDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,10 +36,6 @@
     NSString *cleanedString = [[_user.phone componentsSeparatedByCharactersInSet:[[NSCharacterSet characterSetWithCharactersInString:@"0123456789-+()"] invertedSet]] componentsJoinedByString:@""];
     NSString *phoneString = [NSString stringWithFormat:@"telprompt://%@", cleanedString];
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phoneString]];
-}
-
-- (void)setUserData:(SCUser *)userInfo {
-    _user = userInfo;
 }
 
 

@@ -8,65 +8,39 @@
 
 #import "SCLoginViewController.h"
 #import "SCAppDelegate.h"
-#import "AFNetworking.h"
-#import "SCAppDelegate.h"
-#import "SCMenuViewController.h"
+#import "SCApi.h"
+
 
 @interface SCLoginViewController ()
 
 @end
+
 
 @implementation SCLoginViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [self.activityIndicator startAnimating];
-//    
-//    NSString *email = @"harchenko.grape@gmail.com";
-//    NSString *password = @"123456";
-//    
-//    NSDictionary *parameters = @{@"email": email, @"password": password};
-//    
-//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-//    [manager GET:@"http://sportcourts.ru/api/auth" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        
-//        NSNumber *authKey = [responseObject objectForKey:@"code"];
-//        
-//        // если есть код ошибки
-//        if (authKey) {
-//            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка авторизации" message:[responseObject objectForKey:@"description"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//            [alertView show];
-//            [self.activityIndicator setHidden:YES];
-//        } else {
-//            // записываем токен и айди пользователя
-//            NSString *token = [responseObject objectForKey:@"token"];
-//            NSString *user_id = [responseObject objectForKey:@"user_id"];;
-//            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//            NSMutableDictionary *registerDefaults = [NSMutableDictionary dictionary];
-//            [registerDefaults setObject:token forKey:@"SCSettingUserToken"];
-//            [registerDefaults setObject:user_id forKey:@"SCSettingUserId"];
-//            [userDefaults registerDefaults:registerDefaults];
-//            [userDefaults synchronize];
-//            
-//            NSLog(@"Success auth");
-//            
-//            [self.activityIndicator setHidden:YES];
-//            
-//            SCAppDelegate *app = [[UIApplication sharedApplication] delegate];
-//            [app initWindowWithDynamicsDrawer];
-//        }
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"API Auth Connection Error: %@", error);
-//        
-//        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//        [alertView show];
-//    }];
-
+    [_emailField setDelegate:self];
+    [_passwordField setDelegate:self];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+    SCApi *api = [[SCApi alloc] init];
+    NSString *email = [api emailFromKeychain];
+    NSString *password = [api passwordFromKeychain];
+    if (password && email) {
+        [_emailField setText:email];
+        [_passwordField setText:password];
+        
+        if (self.firstLaunch) {
+            [self loginButton:self];
+        }
+    }
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -84,49 +58,32 @@
 */
 
 - (IBAction)loginButton:(id)sender {
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    
     [self.activityIndicator setHidden:NO];
     [self.activityIndicator startAnimating];
     
     NSString *email = self.emailField.text;
     NSString *password = self.passwordField.text;
     
-    NSDictionary *parameters = @{@"email": email, @"password": password};
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
-    [manager GET:@"http://sportcourts.ru/api/auth" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSNumber *authKey = [responseObject objectForKey:@"code"];
-        
-        // если есть код ошибки
-        if (authKey) {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка авторизации" message:[responseObject objectForKey:@"description"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    SCApi *api = [[SCApi alloc] init];
+    [api authWithPassword:password andEmail:email completion:^(NSError *error){
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Ошибка авторизации" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
             [self.activityIndicator setHidden:YES];
         } else {
-            // записываем токен и айди пользователя
-            NSMutableDictionary *response = [responseObject objectForKey:@"response"];
-            NSString *token = [response objectForKey:@"token"];
-            NSString *user_id = [response objectForKey:@"user_id"];
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-            NSMutableDictionary *registerDefaults = [NSMutableDictionary dictionary];
-            [registerDefaults setObject:token forKey:@"SCSettingUserToken"];
-            [registerDefaults setObject:user_id forKey:@"SCSettingUserId"];
-            [userDefaults registerDefaults:registerDefaults];
-            [userDefaults synchronize];
-            
             [self.activityIndicator setHidden:YES];
             
             SCAppDelegate *app = [[UIApplication sharedApplication] delegate];
             [app initWindowWithDynamicsDrawer];
             NSLog(@"BasicInit");
         }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"API Auth Connection Error: %@", error);
-        
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
     }];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+}
+
+-(void)dismissKeyboard {
+    [self.view endEditing:YES];
 }
 @end

@@ -23,7 +23,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    [self initWindowWithLogin];
+    [self initWindowWithLoginAndAuth:YES];
     
     return YES;
 }
@@ -34,7 +34,11 @@
     // Предоставляем обработку запросов себе
     self.dynamicsDrawerViewController.delegate = self;
     
-    NSArray *stylers = @[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler]];
+    MSDynamicsDrawerScaleStyler *scaleStyler = [MSDynamicsDrawerScaleStyler styler];
+    scaleStyler.closedScale = 0.0;
+    MSDynamicsDrawerFadeStyler *fadeStyler = [MSDynamicsDrawerFadeStyler styler];
+    fadeStyler.closedAlpha = 0.0;
+    NSArray *stylers = @[scaleStyler, fadeStyler];
     
     # warning переопределить стили
     [self.dynamicsDrawerViewController addStylersFromArray:stylers forDirection:MSDynamicsDrawerDirectionLeft];
@@ -51,7 +55,6 @@
     // Устанавливаем меню как drawer для левого направления
     [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
     
-    #warning добавить логику авторизации
     // Transition to the first view controller
     [menuViewController transitionToViewController:SCPaneViewControllerTypeProfile];
     self.menuViewController.paneViewControllerType = SCPaneViewControllerTypeProfile;
@@ -72,18 +75,21 @@
     [self.window sendSubviewToBack:self.windowBackground];
 }
 
-- (void)initWindowWithLogin {
+- (void)initWindowWithLoginAndAuth:(BOOL)auth {
     
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *vc = [sb instantiateInitialViewController];// Or any VC with Id
+    SCLoginViewController *vc = [sb instantiateInitialViewController];// Or any VC with Id
     
     self.window.rootViewController = vc; // PLEASE READ NOTE ABOUT THIS LINE
     [UIView transitionWithView:self.window
                       duration:0.5
                        options:UIViewAnimationOptionTransitionCrossDissolve
                     animations:^{ self.window.rootViewController = vc; }
-                    completion:nil];
-    
+                    completion:^(BOOL finished){
+                        if (auth) {
+                            [vc loginButton:vc];
+                        }
+                    }];
 }
 
 #pragma mark - SCAppDelegate

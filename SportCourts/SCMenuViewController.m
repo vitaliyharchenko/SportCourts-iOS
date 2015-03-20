@@ -7,16 +7,16 @@
 //
 
 #import "SCAppDelegate.h"
-
 #import "SCMenuViewController.h"
 #import "SCMenuCell.h"
-
+#import "SCProfileCell.h"
 #import "SCProfileViewController.h"
 #import "SCUsersTableViewController.h"
-
 #import "SCLoginViewController.h"
+#import "UIImageView+AFNetworking.h"
+#import "SCUser.h"
+#import "SCApi.h"
 
-NSString * const SCMenuCellReuseIdentifier = @"Menu Cell with Icon";
 
 @interface SCMenuViewController ()
 
@@ -27,6 +27,7 @@ NSString * const SCMenuCellReuseIdentifier = @"Menu Cell with Icon";
 @property (nonatomic, strong) UIBarButtonItem *paneRevealLeftBarButtonItem;
 
 @end
+
 
 @implementation SCMenuViewController
 
@@ -40,29 +41,31 @@ NSString * const SCMenuCellReuseIdentifier = @"Menu Cell with Icon";
     }
     return self;
 }
-
-#pragma mark - UIViewController
-
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        [self initialize];
-    }
-    return self;
-}
+//
+//#pragma mark - UIViewController
+//
+//- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+//{
+//    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+//    if (self) {
+//        [self initialize];
+//    }
+//    return self;
+//}
 
 // создаем вложенный TableView
-- (void)loadView
-{
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-}
+//- (void)loadView
+//{
+//    self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialize];
     
     // присваеваем классы ячейкам меню
-    [self.tableView registerClass:[SCMenuCell class] forCellReuseIdentifier:SCMenuCellReuseIdentifier];
+//    [self.tableView registerClass:[SCMenuCell class] forCellReuseIdentifier:SCMenuCellReuseIdentifier];
+//    [self.tableView registerClass:[SCProfileCell class] forCellReuseIdentifier:@"Menu Cell"];
     
     //делаем таблицу прозрачной, чтобы видеть фон
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -91,6 +94,7 @@ NSString * const SCMenuCellReuseIdentifier = @"Menu Cell with Icon";
     self.paneViewControllerTitles =
     @{
       @(SCPaneViewControllerTypeProfile) : @"Мой профиль",
+      @(SCPaneViewControllerTypeGames) : @"Игры",
       @(SCPaneViewControllerTypeUsers) : @"Игроки",
       @(SCPaneViewControllerTypeLogout) : @"Выход"
       };
@@ -99,6 +103,7 @@ NSString * const SCMenuCellReuseIdentifier = @"Menu Cell with Icon";
     self.paneViewControllerIdentifiers =
     @{
       @(SCPaneViewControllerTypeProfile) : @"Profile",
+      @(SCPaneViewControllerTypeGames) : @"Games",
       @(SCPaneViewControllerTypeUsers) : @"Users",
       @(SCPaneViewControllerTypeLogout) : @"Logout",
       @(SCPaneViewControllerTypeLogin) : @"Login"
@@ -179,11 +184,30 @@ NSString * const SCMenuCellReuseIdentifier = @"Menu Cell with Icon";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SCMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Menu Cell with Icon" forIndexPath:indexPath];
-    
-    cell.textLabel.text = self.paneViewControllerTitles[@([self paneViewControllerTypeForIndexPath:indexPath])];
-    
-    return cell;
+    if ([indexPath row] == 0) {
+        SCProfileCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Profile Cell" forIndexPath:indexPath];
+        SCApi *api = [[SCApi alloc] init];
+        [api getCurrentUserAndCompletion:^(SCUser *user, NSError *error) {
+            if (user) {
+                cell.textArea.text = [NSString stringWithFormat:@"%@ %@", user.first_name, user.last_name];
+                NSString *imgUrl = [NSString stringWithFormat:@"http://sportcourts.ru/images/avatars/%@",user.user_id];
+                [cell.avatar setImageWithURL:[NSURL URLWithString:imgUrl]];
+            }
+        }];
+        
+        return cell;
+    } else {
+        SCMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Menu Cell" forIndexPath:indexPath];
+        cell.textLabel.text = self.paneViewControllerTitles[@([self paneViewControllerTypeForIndexPath:indexPath])];
+        return cell;
+    }
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+        return 0.0f;
+    return 32.0f;
 }
 
 #pragma mark - UITableViewDelegate
@@ -191,18 +215,20 @@ NSString * const SCMenuCellReuseIdentifier = @"Menu Cell with Icon";
 // обработка нажатия
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     SCPaneViewControllerType paneViewControllerType = [self paneViewControllerTypeForIndexPath:indexPath];
     
     if (paneViewControllerType == SCPaneViewControllerTypeLogout) {
+        
+        [self.dynamicsDrawerViewController setPaneState:MSDynamicsDrawerPaneStateClosed animated:YES allowUserInterruption:YES completion:nil];
+        
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         [userDefaults removeObjectForKey:@"SCSettingUserToken"];
         [userDefaults removeObjectForKey:@"SCSettingUserId"];
         [userDefaults synchronize];
         
-        // [self transitionToLoginController];
-        
         SCAppDelegate *app = [[UIApplication sharedApplication] delegate];
-        [app initWindowWithLogin];
+        [app initWindowWithLoginAndAuth:NO];
         
         return;
     }

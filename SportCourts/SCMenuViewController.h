@@ -9,12 +9,13 @@
 typedef NS_ENUM(NSUInteger, SCPaneViewControllerType) {
     SCPaneViewControllerTypeProfile,
     SCPaneViewControllerTypeUsers,
+    SCPaneViewControllerTypeGames,
     SCPaneViewControllerTypeLogout,
     SCPaneViewControllerTypeLogin,
     SCPaneViewControllerTypeCount
 };
 
-@interface SCMenuViewController : UITableViewController
+@interface SCMenuViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, assign) SCPaneViewControllerType paneViewControllerType;
 @property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;

@@ -6,28 +6,28 @@
 //  Copyright (c) 2015 Vitaliy Harchenko. All rights reserved.
 //
 
-#import "SCUsersTableViewController.h"
-#import "SCUserViewCell.h"
+#import "SCGamesTableViewController.h"
+#import "SCGameViewCell.h"
 #import "AFNetworking.h"
 #import "UIImageView+AFNetworking.h"
-#import "SCUserDetailViewController.h"
+#import "SCGameDetailViewController.h"
 #import "SCApi.h"
 
-@interface SCUsersTableViewController ()
+@interface SCGamesTableViewController ()
 
 @end
 
-@implementation SCUsersTableViewController
+@implementation SCGamesTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Игроки";
+    self.navigationItem.title = @"Игры";
     
     SCApi *api = [[SCApi alloc] init];
-    [api getUsersAndCompletion:^(NSMutableArray *users, NSError *error) {
-        if (users) {
-            self.users = users;
+    [api getGamesAndCompletion:^(NSMutableArray *games, NSError *error) {
+        if (games) {
+            self.games = games;
             [self.tableView reloadData];
         }
         if (error) {
@@ -57,24 +57,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    if (_users) {
-        return ([_users count] - 1);
-    } else {
-        return 0;
-    }
+    return [_games count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SCUserViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"User Cell" forIndexPath:indexPath];
+    SCGameViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Game Cell" forIndexPath:indexPath];
     
-    if (_users) {
-        SCUser *user = [_users objectAtIndex:indexPath.row];
-        
-        cell.userName.text = [NSString stringWithFormat:@"%@ %@", user.first_name, user.last_name];
-        
-        NSString *avatarUrlString = [NSString stringWithFormat:@"http://sportcourts.ru/images/avatars/%@", user.user_id];
-        NSURL *avatarUrl = [NSURL URLWithString:avatarUrlString];
-        [cell.avatar setImageWithURL:avatarUrl];
+    if (_games) {
+        SCGame *game = [_games objectAtIndex:indexPath.row];
+        cell.textLabel.text = game.gameDescription;
     }
     
     return cell;
@@ -126,12 +117,12 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    if (indexPath) {
-        SCUser *user = [_users objectAtIndex:indexPath.row];
-        SCUserDetailViewController *vc = segue.destinationViewController;
-        [vc setUser:user];
-    }
+//    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+//    if (indexPath) {
+//        SCUser *user = [_users objectAtIndex:indexPath.row];
+//        SCUserDetailViewController *vc = segue.destinationViewController;
+//        [vc setUser:user];
+//    }
 }
 
 @end

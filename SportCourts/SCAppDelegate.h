@@ -17,7 +17,7 @@
 @property (strong, nonatomic) SCMenuViewController *menuViewController;
 
 - (void)initWindowWithDynamicsDrawer;
-- (void)initWindowWithLogin;
+- (void)initWindowWithLoginAndAuth:(BOOL)auth;
 
 @end
 
